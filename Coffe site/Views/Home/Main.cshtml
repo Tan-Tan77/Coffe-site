@@ -1,0 +1,226 @@
+﻿@{
+    ViewData["Title"] = "Main";
+    var color = ViewBag.PageColor ?? "#FFF9DF";
+}
+
+
+<style>
+    body{
+        background-image: linear-gradient(to bottom,#FFF5DA, #FFD1A6);
+    
+    }
+</style>
+<h1 class="text-black">
+    Кофейные позиции
+</h1>
+<p class="text-black">
+    Широкий ассортимент кофе на любой вкус
+</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/638f6575bac775351fd533ac602bfe65.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">Милкшейк</h4>
+                        <p class="card-text">
+                            Кремовый напиток на основе
+                            кофе с объёмной пеной и
+                            шоколадом
+                        </p>
+                        <h4 class="card-text text-black">280 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="10">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/b9abaf0bfb67dc36aa14bb25666a862b.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">Айс Американо</h4>
+                        <p class="card-text">
+                            Холодный кофе с дерзким
+                            тёмным вкусом и большим
+                            количеством кофеина
+                        </p>
+                        <h4 class="card-text text-black">200 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="8">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/4c6cb7bbfbf1734f63ceaf1bee92e634.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">Матча</h4>
+                        <p class="card-text">
+                            Нежный вкус чая матча с
+                            молочными нотами
+                        </p>
+                        <h4 class="card-text text-black">270 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="9">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/23f41955a2872de79640780b2cc7a4bd.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">Айс Латте</h4>
+                        <p class="card-text">
+                            Холодный кофе со сливочной
+                            пенкой и нежным вкусом
+                        </p>
+                        <h4 class="card-text text-black">250 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="7">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/latte1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">Горячий Латте</h4>
+                        <p class="card-text">
+                            Согревающий и бодрящий кофе
+                            с лёгкой пенкой
+                        </p>
+                        <h4 class="card-text text-black">250 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="11">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/americano.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">Горячий Американо</h4>
+                        <p class="card-text">
+                            Бодрящий вкус классического кофе идеален для пробуждения
+                        </p>
+                        <h4 class="card-text text-black">200 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="12">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/maciato.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">
+                            Карамельный
+                            Макиато
+                        </h4>
+                        <p class="card-text">
+                            Нежный вкус карамели и кофе -
+                            идеальное сочетания
+                        </p>
+                        <h4 class="card-text text-black">240 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="13">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/raf.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">
+                            Раф
+                        </h4>
+                        <p class="card-text">
+                            Сочетание сливок и ванили создаёт
+                            незабываемый нежный вкус 
+                        </p>
+                        <h4 class="card-text text-black">220 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="14">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 ">
+            <div class="card box-shadow card-style">
+                <div class="card-body">
+                    <img class="card-img-top coffe-img" src="~/lib/meta/tea.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text text-black">
+                            Чёрный чай
+                        </h4>
+                        <p class="card-text">
+                            Ароматный чай с классическим
+                            вкусом
+                        </p>
+                        <h4 class="card-text text-black">150 рублей</h4>
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn buttons dessert-item" id="15">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="~/js/cart.js"></script>

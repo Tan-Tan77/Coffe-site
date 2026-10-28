@@ -1,0 +1,26 @@
+﻿@{
+
+        Layout = "_Layout";
+  
+}
+
+
+<script>
+
+    let acc = "";
+     let auth = "";
+
+
+    if(localStorage.getItem('token')!= null){
+
+        document.getElementById('RegLoginBar').textContent = acc;
+
+    }else{
+
+         document.getElementById('accBar').textContent= auth;
+
+    }
+
+   
+  
+</script>

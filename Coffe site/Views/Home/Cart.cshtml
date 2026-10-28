@@ -1,0 +1,1655 @@
+﻿@*
+  
+*@
+@{
+}
+<style>
+	body {
+		background-image: linear-gradient(to bottom,#FFF5DA, #FFD1A6);
+	}
+</style>
+
+<div class="container cart-top-margin" id="cartBar">
+	<div class="row">
+		<div class="col-md-1">
+			<img class="card-img margin_account_header margin-address" src="~/lib/meta/cart.png" />
+		</div>
+		<div class="col-md-9">
+			<h1 class="account_h1 margin_account_header margin-address">Корзина</h1>
+		</div>
+	</div>
+</div>
+
+
+@* <div class="container" id="address">
+	<div class="row">
+		<div class="col-md-9">
+			<p class="account_p margin-for-all" id="addressValue">Адрес доставки</p>
+		</div>
+
+		<div class="col-md-3">
+			<p class="account_p edit_account">
+				<button class="btn-change-on-form account_p edit_account margin-change" type="submit" id="ChangeAddress" data-bs-toggle="modal" data-bs-target="#ChangeAddressModal">изменить</button>
+			</p>
+		</div>
+
+	</div>
+</div>
+ *@
+
+
+
+@* <div class="container" id="adrNull">
+	<div class="row">
+		<div class="col-md-9">
+			<p class="account_p margin-for-all" id="addressValue">Адрес не добавлен</p>
+		</div>
+
+		<div class="col-md-3">
+			<p class="account_p edit_account">
+				<a class="btn-change-on-form account_p edit_account margin-change" type="button" id="AddAddressBtn" href="@Url.Action("Account", "Home")">добавить</a>
+			</p>
+		</div>
+
+	</div>
+</div>
+ *@
+
+
+
+
+@* <div class="container">
+	<div class="row align-items-start">
+
+		<div class="col-md-6">
+
+<div class="card cart-card margin-for-all">
+	<div class="card-body">
+		<div class="d-flex flex-row">
+
+			<div class="d-flex justify-content-start">
+				<img class="cart-images" src="~/lib/meta/americano.jpg" alt="cinnabon" />
+			</div>
+
+			<div class="item margin-for-text margin-for-top">
+				<div class="justify-content-start">
+					<h4 class="text-light1">
+						Горячий Американо
+					</h4>
+				</div>
+
+				<h4 class="justify-content-start ">
+					200 рублей
+				</h4>
+			</div>
+
+			<div class="d-flex justify-content-lg-end margin-for-plus-minus me-3">
+				<button class="btn-add-cart align-self-center ">+</button>
+				<h4 class="card-text text-black align-self-center small-margin-for-plus-minus">
+					1
+				</h4>
+				<button class="btn-add-cart align-self-center small-margin-for-plus-minus">-</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+			<div class="card cart-card margin-for-all">
+				<div class="card-body">
+					<div class="d-flex flex-row">
+
+						<div class="d-flex justify-content-start">
+							<img class="cart-images" src="~/lib/meta/americano.jpg" alt="cinnabon" />
+						</div>
+
+						<div class="item margin-for-text margin-for-top">
+							<div class="justify-content-start">
+								<h4 class="text-light1">
+									Горячий Американо
+								</h4>
+							</div>
+
+							<h4 class="justify-content-start ">
+								200 рублей
+							</h4>
+						</div>
+
+						<div class="d-flex justify-content-lg-end margin-for-plus-minus me-3">
+							<button class="btn-add-cart align-self-center ">+</button>
+							<h4 class="card-text text-black align-self-center small-margin-for-plus-minus">
+								1
+							</h4>
+							<button class="btn-add-cart align-self-center small-margin-for-plus-minus">-</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="card cart-card margin-for-all">
+				<div class="card-body">
+					<div class="d-flex flex-row">
+
+						<div class="d-flex justify-content-start">
+							<img class="cart-images" src="~/lib/meta/americano.jpg" alt="cinnabon" />
+						</div>
+
+						<div class="item margin-for-text margin-for-top">
+							<div class="justify-content-start">
+								<h4 class="text-light1">
+									Горячий Американо
+								</h4>
+							</div>
+
+							<h4 class="justify-content-start ">
+								200 рублей
+							</h4>
+						</div>
+
+						<div class="d-flex justify-content-lg-end margin-for-plus-minus me-3">
+							<button class="btn-add-cart align-self-center ">+</button>
+							<h4 class="card-text text-black align-self-center small-margin-for-plus-minus">
+								1
+							</h4>
+							<button class="btn-add-cart align-self-center small-margin-for-plus-minus">-</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+</div>
+
+
+
+
+
+
+        <div class="col-md-4">
+			<div class="card bill-cart margin-for-bill">
+				
+					<div class="bill-second ">
+
+					<div class="item">
+						<h4 class="justify-content-start text-light1 bill-description">Чек: 1.730 ₽</h4>
+						<h4 class="justify-content-start text-light1 bill-description">Количество позиций: 9</h4>
+						<h4 class="justify-content-start text-light1 bill-description">Сумма доставки: 0 ₽</h4>
+					</div>
+
+					</div>
+					<div class="bill-first">
+						<div class="item">
+
+						<h4 class="justify-content-end bill-all">ИТОГ:200 ₽</h4>
+						<button class="bill-btn justify-content-center" type="submit">ОФОРМИТЬ ЗАКАЗ</button>
+						
+						
+							<div class="d-flex justify-content-lg-end">
+                              <div class="mt-lg-5 pick-up-margin">
+								<div class="item-flex">
+									<div class="d-flex flex-row">
+										<p class="account_p me-4 mb-lg-4 p-addition-margin">самовывоз</p>
+								<div class="switch-btn "></div>
+									</div>
+								</div>
+						</div>
+
+
+
+						</div>
+
+							</div>
+						
+
+					</div>
+
+				
+	
+</div>
+</div>
+
+
+
+
+
+
+			</div>
+</div>
+
+
+
+
+	 *@
+
+
+
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+
+			<strong class="me-auto" id="header">Заголовок сообщения</strong>
+
+			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+		</div>
+		<div class="toast-body" id="message">
+			Текст сообщения
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade align-content-center" id="ChangeAddressModal">
+	<div class="modal-dialog">
+
+		<div class="modal-content dropdown-modal">
+
+			<div class="modal-body">
+
+
+				<div class="mb-4">
+					<button type="submit" class="btn dropdown-toggle dropdown-main-item-style" data-bs-toggle="dropdown" id="dropDownMain">
+						Главный адрес
+					</button>
+
+					<ul class="dropdown-menu" id="pointPfMenu">
+					</ul>
+				</div>
+				<div class="mb-1 margin-btn">
+					<button type="submit" id="ChangeAddressBtn" class="btn-change-modal">Выбрать адрес</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+
+
+
+<script>
+
+	let totalCostForSwitch = 0;
+	let dPrice =0;
+
+      async function CountDeliveryCost(adrValue,positionCount,totalPrice){
+
+		  const token_ = localStorage.getItem('token');
+
+		  const responceForLocation = await fetch('/api/cart/get-location',{
+
+			  method:"POST",
+			  headers:{
+			 'Authorization':`Bearer ${token_}`,
+			 'Content-Type':'application/json'
+			  },
+			  body:JSON.stringify({newphone:adrValue})
+
+		  });
+
+		  const resultLocation = await responceForLocation.json();
+
+		  if(resultLocation.lat == ""){
+
+			  console.log(resultLocation);
+		  }else{
+
+			const deliverPriceEl = document.getElementById('deliveryPrice');
+
+			const totalCostEl =  document.getElementById('totalCost');
+
+			let totalCostCount = 0;
+			let totalDeliveryCost = 210;
+			const taxForEveryKm = 17;
+
+			const tenPercentDiscount = 0.1;
+			const fiftyPercentDiscount = 0.15;
+
+			   console.log("долгота", resultLocation.lat);
+				console.log("широта", resultLocation.lng);
+
+	const myAPIKey = "e607a42a0c494b859290835d68f68bb4";
+	const fromWaypoint = [55.7460, 37.6330]; // latutude, longitude
+	const toWaypoint =   [resultLocation.lat,resultLocation.lng]; // latitude, longitude
+	const url = `https://api.geoapify.com/v1/routing?waypoints=${fromWaypoint.join(',')}|${toWaypoint.join(',')}&mode=drive&details=instruction_details&apiKey=${myAPIKey}`;
+
+	
+
+	fetch(url).then(res => res.json()).then(result => {
+		console.log(result);
+	  const distance = result.features[0].properties.distance;
+	console.log("Расстояние:", distance, "метров");
+	
+	const num = Number(distance);
+
+	if(num >5000){
+			console.log("Доставка недоступна");
+
+				
+	const toastLiveExample = document.getElementById('liveToast')
+	
+	 
+		  const header =document.getElementById("header");
+		  header.textContent = "Доставка недоступна";
+
+		  const msg =document.getElementById("message");
+		  msg.textContent = "Радиус доставки - 5 км. Текущий адрес находится на расстоянии "+ distance + "м от кофейни";
+
+		const toast = new bootstrap.Toast(toastLiveExample);
+		toast.show();
+	 
+	const buybtn = document.getElementById("buy-btn");
+			  buybtn.classList.remove("bill-btn-prepered");
+	buybtn.classList.add("bill-btn");
+			
+
+
+
+
+
+
+
+
+
+	}else{
+
+		if(num >=4000){
+
+			totalDeliveryCost = totalDeliveryCost + (taxForEveryKm*3);
+
+		}else if(num >=3000){
+			totalDeliveryCost = totalDeliveryCost + (taxForEveryKm*2);
+		}else if(num >=2000){
+
+			totalDeliveryCost = totalDeliveryCost + taxForEveryKm;
+
+		}
+		console.log("Сумма доставки без скидки: ",totalDeliveryCost);
+
+		let discount = 0;
+
+		if(totalPrice >= 3000){
+			discount=totalDeliveryCost*fiftyPercentDiscount;
+		}else if(totalPrice >= 1500){
+				discount=totalDeliveryCost*tenPercentDiscount;
+		}
+
+		let totalDeliveryCostWithDiscount = totalDeliveryCost - discount;
+
+		deliverPriceEl.textContent = "Сумма доставки: " + totalDeliveryCostWithDiscount + "₽";
+		totalCostCount = totalDeliveryCostWithDiscount +totalPrice;
+		totalCostEl.textContent = "ИТОГ: " + totalCostCount + "₽";
+
+
+			console.log("Доставка доступна");
+				console.log("Сумма доставки со скидкой: ",totalDeliveryCostWithDiscount);
+					console.log("скидка: ",discount);
+					dPrice = totalDeliveryCostWithDiscount;
+	}
+
+	console.log("Количество позиций ",positionCount);
+		console.log("Сумма без доставки",totalPrice);
+
+	}, error =>{
+
+
+	const toastLiveExample = document.getElementById('liveToast');
+
+
+		  const header =document.getElementById("header");
+		  header.textContent = "Ошибка";
+
+		  const msg =document.getElementById("message");
+		  msg.textContent = "Невозможно рассчитать маршрут доставки. Доставка недоступна";
+
+		const toast = new bootstrap.Toast(toastLiveExample);
+		toast.show();
+
+	const buybtn = document.getElementById("buy-btn");
+			  buybtn.classList.remove("bill-btn-prepered");
+	buybtn.classList.add("bill-btn");
+
+
+	console.log(err)
+	
+
+
+	});
+
+	
+
+		  }
+
+	} 
+
+
+
+		window.addEventListener('load', async function() {
+
+	
+			
+		const token = localStorage.getItem('token');
+
+		if(token != null){
+
+
+
+		
+	const responsePhone = await fetch('/api/change/get-phone',
+
+	{
+		method:'POST',
+		headers:{
+			 'Authorization':`Bearer ${token}`,
+			 'Content-Type':'application/json'
+		}
+
+	});
+
+	const ph = await responsePhone.json();
+
+
+	
+
+					  const addresses = ph.list;
+
+					if(addresses.length >=1 || ph.address != "Адреса отсутствуют"){
+						console.log(ph.address);
+			
+				 document.getElementById('dropDownMain').textContent = ph.address;
+
+				
+
+						const adrDiv = document.createElement('div');
+						adrDiv.classList.add("container");
+						adrDiv.id = 'address';
+
+						const adrRow = document.createElement('div');
+						adrRow.classList.add('row');
+
+						const nineCol = document.createElement('div');
+						nineCol.classList.add("col-md-9");
+
+						const addressP = document.createElement('p');
+						addressP.classList.add("account_p", "margin-for-all");
+						addressP.id  = 'addressValue';
+					    addressP.textContent = ph.address;
+
+						const threeCol = document.createElement('div');
+						threeCol.classList.add("col-md-3");
+
+						const editP = document.createElement('p');
+						editP.classList.add("account_p", "edit_account");
+						
+						const adrBtn = document.createElement('button');
+						adrBtn.classList.add("btn-change-on-form", "account_p" ,"edit_account" ,"margin-change");
+						adrBtn.type = "submit";
+						adrBtn.id = 'ChangeAddress';
+					adrBtn.setAttribute('data-bs-toggle', "modal");
+	                  adrBtn.setAttribute('data-bs-target', "#ChangeAddressModal");
+					  adrBtn.textContent = "изменить";
+
+
+					  editP.appendChild(adrBtn);
+					  threeCol.appendChild(editP);
+
+
+					  nineCol.appendChild(addressP);
+
+					  adrRow.appendChild(nineCol);
+						  adrRow.appendChild(threeCol);
+
+						  adrDiv.appendChild(adrRow);
+
+
+						  const cartElement =  document.getElementById('cartBar');
+
+						  cartElement.after(adrDiv);
+
+
+									 const menu = document.getElementById('pointPfMenu');
+										 let fragment = new DocumentFragment();
+
+										 console.log(addresses);
+										
+				  addresses.forEach((address, index) => {
+
+							if(address!=ph.address){
+
+
+
+					  let addressElement = document.createElement('li');
+
+						  addressElement.classList.add("dropdown-item", "dropdown-items-style","address-item");
+
+							addressElement.textContent = address;
+
+							   fragment.append(addressElement);
+
+									   menu.append(addressElement);
+							}
+				  console.log(addresses);
+				  
+	   });
+	   }else{
+
+		   const adrDiv = document.createElement('div');
+						adrDiv.classList.add("container");
+						adrDiv.id="adrNull";
+
+						const adrRow = document.createElement('div');
+						adrRow.classList.add('row');
+
+						const nineCol = document.createElement('div');
+						nineCol.classList.add("col-md-9");
+
+						const addressP = document.createElement('p');
+						addressP.classList.add("account_p", "margin-for-all");
+						addressP.id="nullAddressText"
+						addressP.textContent = "Адрес не добавлен";
+
+						const toastLiveExample = document.getElementById('liveToast')
+						  const header =document.getElementById("header");
+		  header.textContent = "Доставка недоступна";
+
+		  const msg =document.getElementById("message");
+		  msg.textContent = "Добавьте адрес доставки на странице аккаунта для оформления заказа";
+
+		const toast = new bootstrap.Toast(toastLiveExample)
+		toast.show()
+
+
+						const threeCol = document.createElement('div');
+						threeCol.classList.add("col-md-3");
+						
+
+						const editP = document.createElement('p');
+						editP.classList.add("account_p", "edit_account");
+
+						const adrBtn = document.createElement('a');
+						adrBtn.classList.add("btn-change-on-form", "account_p" ,"edit_account" ,"margin-change");
+						adrBtn.type = "button";
+						adrBtn.id = 'goToAccoutPage';
+					  adrBtn.textContent = "добавить";
+					  adrBtn.href="@Url.Action("Account", "Home")";
+
+
+					  editP.appendChild(adrBtn);
+					  threeCol.appendChild(editP);
+
+
+					  nineCol.appendChild(addressP);
+
+					  adrRow.appendChild(nineCol);
+						  adrRow.appendChild(threeCol);
+
+						  adrDiv.appendChild(adrRow);
+
+
+						  const cartElement =  document.getElementById('cartBar');
+
+						
+						cartElement.parentElement.insertBefore(adrDiv, cartElement.nextSibling);
+					
+
+			 console.log("user doesnt has addresses");
+
+
+	   }
+
+				
+
+
+
+
+
+		const getItemsFromDb = await fetch('/api/cart/cart-from-db',{
+
+			method:'POST',
+			headers:{'Authorization':`Bearer ${token}`, 'Content-Type':'application/json'}
+
+		});
+
+		const cart = await getItemsFromDb.json();
+
+		if(cart.length > 0){
+
+			const countsOFItems = [];
+
+
+			for (let count of cart){
+
+				if(count.count > 0){
+
+					countsOFItems.push(0);
+					countsOFItems.push(count.count);
+				};
+
+
+			}
+
+					const container = document.createElement('container');
+					const row = document.createElement('row');
+					row.classList.add("row","align-items-start")
+
+					
+					const secondCol = document.createElement('div');
+					secondCol.classList.add("col-md-4");
+
+					const mainDivBill = document.createElement('div');
+					mainDivBill.classList.add("card", "bill-cart", "margin-for-bill");
+
+					const whiteDiv = document.createElement('div');
+					whiteDiv.classList.add("bill-second");
+
+					const beigeDiv = document.createElement('div');
+					beigeDiv.classList.add("bill-first");
+
+					const itemDiv = document.createElement('div');
+					itemDiv.classList.add("item");
+
+					const SecondItemDiv = document.createElement('div');
+					itemDiv.classList.add("item");
+
+					const check = document.createElement('h4');
+					check.classList.add("justify-content-start", "text-light1", "bill-description");
+					check.textContent= "Чек:";
+					check.id = "totalCheck";
+
+					const totalCount = document.createElement('h4');
+					totalCount.classList.add("justify-content-start", "text-light1", "bill-description");
+					totalCount.textContent= "Количество позиций:";
+					totalCount.id = "totalCount";
+
+					const deliveryPrice = document.createElement('h4');
+					deliveryPrice.classList.add("justify-content-start", "text-light1", "bill-description");
+					deliveryPrice.textContent= "Сумма доставки:";
+					deliveryPrice.id = "deliveryPrice";
+
+					const totalCost = document.createElement('h4');
+					totalCost.classList.add("justify-content-end","bill-all");
+					totalCost.textContent  ="ИТОГ:";
+					totalCost.id = "totalCost";
+
+
+						const buyBtn = document.createElement('button');
+					buyBtn.type = "submit";
+					buyBtn.id="buy-btn"
+					buyBtn.textContent = "ОФОРМИТЬ ЗАКАЗ";
+
+
+
+					const firstDivWithJustify = document.createElement('div');
+					firstDivWithJustify.classList.add("d-flex" ,"justify-content-lg-end","mb-5");
+
+					const DivMargin = document.createElement('div');
+					DivMargin.classList.add("mt-lg-5","pick-up-margin");
+
+					const itemFlexDiv = document.createElement('div');
+					itemFlexDiv.classList.add("item-flex");
+
+					const dFlexDiv = document.createElement('div');
+					dFlexDiv.classList.add("d-flex","flex-row");
+
+
+					const switchText = document.createElement('p');
+					switchText.classList.add("account_p","me-4","mb-lg-4","p-addition-margin");
+					switchText.textContent="самовывоз";
+
+					const switchEl = document.createElement('div');
+					switchEl.classList.add("switch-btn");
+					switchEl.id = "switch";
+
+
+					dFlexDiv.appendChild(switchText);
+					dFlexDiv.appendChild(switchEl);
+
+					itemFlexDiv.appendChild(dFlexDiv);
+
+					DivMargin.appendChild(itemFlexDiv);
+
+					firstDivWithJustify.appendChild(DivMargin);
+
+
+					if(document.getElementById('address')){
+					buyBtn.classList.add("bill-btn-prepered","justify-content-center");
+					}else{
+						buyBtn.classList.add("bill-btn","justify-content-center");
+
+					}
+
+				
+					
+				   itemDiv.appendChild(totalCost);
+				   itemDiv.appendChild(buyBtn);
+				   itemDiv.appendChild(firstDivWithJustify);
+				   beigeDiv.appendChild(itemDiv);
+
+				SecondItemDiv.appendChild(check);
+					SecondItemDiv.appendChild(totalCount);
+					SecondItemDiv.appendChild(deliveryPrice);
+					whiteDiv.appendChild(SecondItemDiv);
+
+
+
+				   const cardDiv = document.createElement('div');
+				   cardDiv.classList.add("card","bill-cart","margin-for-bill");
+				   cardDiv.appendChild(whiteDiv);
+				   cardDiv.appendChild(beigeDiv);
+
+				   secondCol.appendChild(cardDiv);
+
+				  const fisrtCol = document.createElement('div');
+					fisrtCol.classList.add("col-md-6");
+
+
+
+					let total = 0;
+					let countOfProducts = 0;
+					let delivery = 0;
+					let totalCheck = 0;
+				
+
+
+		for (let itemOfCart of cart){
+
+			
+			if(itemOfCart.image != null){
+
+				
+				
+				
+				
+
+
+				let index = cart.indexOf(itemOfCart);
+
+				let actualAmount = countsOFItems[index];
+
+				totalCheck = totalCheck + (itemOfCart.price*actualAmount);
+
+			console.log(index);
+	console.log(actualAmount);
+
+	countOfProducts = countOfProducts + actualAmount;
+
+				let image = document.createElement('img');
+				image.classList.add("cart-images");
+				image.src = itemOfCart.image;
+
+				let imageDiv = document.createElement('div');
+				imageDiv.classList.add("d-flex","justify-content-start");
+				imageDiv.appendChild(image);
+
+				let title = document.createElement('h4');
+				title.classList.add("text-light1");
+				title.textContent = itemOfCart.title;
+
+				let titleDiv =  document.createElement('div');
+				titleDiv.classList.add("justify-content-start");
+				titleDiv.appendChild(title);
+
+				let price = document.createElement('h4');
+				price.classList.add("justify-content-start");
+				price.textContent = itemOfCart.price + " рублей";
+
+				let totalPrice = document.createElement('h5');
+				totalPrice.classList.add("justify-content-start", "text-light1",  "addition-margin");
+				let multiply = itemOfCart.price * actualAmount;
+				totalPrice.textContent = multiply + " рублей";
+
+
+				let priceAndTitleDiv = document.createElement('div');
+				priceAndTitleDiv.classList.add("item", "margin-for-text", "margin-for-top");
+				priceAndTitleDiv.appendChild(title);
+				priceAndTitleDiv.appendChild(price);
+				priceAndTitleDiv.appendChild(totalPrice);
+
+				let btnDiv = document.createElement('div');
+				btnDiv.classList.add("d-flex", "justify-content-lg-end" , "margin-for-plus-minus","me-3");
+
+				let btnPlus = document.createElement('button');
+
+				if(actualAmount >= 30){
+
+					
+				btnPlus.classList.add("no-more-add-in-cart", "align-self-center","plus");
+				btnPlus.textContent = "+";
+				btnPlus.id = itemOfCart.product_Id;
+
+
+
+				}else{
+
+
+				btnPlus.classList.add("btn-add-cart", "align-self-center","plus");
+				btnPlus.textContent = "+";
+				btnPlus.id = itemOfCart.product_Id;
+
+
+
+
+				}
+
+				let amount = document.createElement('h4');
+				amount.classList.add("card-text", "text-black" ,"align-self-center", "small-margin-for-plus-minus","amount");
+				amount.textContent = actualAmount;
+				amount.id = itemOfCart.product_Id;
+
+				let btnMinus = document.createElement('button');
+				btnMinus.textContent = "-";
+				btnMinus.classList.add("btn-add-cart", "align-self-center","small-margin-for-plus-minus","minus");
+				btnMinus.id = itemOfCart.product_Id;
+
+				btnDiv.appendChild(btnPlus);
+				btnDiv.appendChild(amount);
+				btnDiv.appendChild(btnMinus);
+
+				let rowDiv = document.createElement('div');
+				rowDiv.classList.add("d-flex", "flex-row");
+				rowDiv.appendChild(imageDiv);
+				rowDiv.appendChild(priceAndTitleDiv);
+				rowDiv.appendChild(btnDiv);
+
+				let bodyDiv = document.createElement('div');
+				bodyDiv.classList.add("card-body");
+				bodyDiv.appendChild(rowDiv);
+
+
+
+				let mainDiv = document.createElement('div');
+				mainDiv.classList.add("card", "cart-card", "margin-for-all");
+				mainDiv.appendChild(bodyDiv);
+				mainDiv.id = itemOfCart.id;
+
+
+				fisrtCol.appendChild(mainDiv);
+
+			    
+               
+			
+			
+				}
+			else{
+
+				
+
+			}
+
+			if(itemOfCart == cart.at(-1)){
+
+				total = delivery + totalCheck;
+
+			    console.log('dsd');
+				 row.appendChild(fisrtCol);
+			    row.appendChild(secondCol);
+				container.appendChild(row);
+
+				if(document.getElementById('address')){
+
+				const appendTo = document.getElementById('address');
+				appendTo.after(container);
+					
+				}else{
+
+					const appendTo2 = document.getElementById('adrNull');
+				appendTo2.after(container);
+				
+				}
+				
+				totalCostForSwitch = totalCheck;
+				 
+				document.getElementById('totalCount').textContent =document.getElementById('totalCount').textContent + "  " + countOfProducts;
+				
+				document.getElementById('deliveryPrice').textContent =document.getElementById('deliveryPrice').textContent + "  " + delivery + "₽";
+
+			  document.getElementById('totalCheck').textContent =document.getElementById('totalCheck').textContent + "  " + totalCheck + "₽";
+
+			  document.getElementById('totalCost').textContent =document.getElementById('totalCost').textContent + "  " + total + "₽";
+
+			const adrV = document.getElementById('addressValue');
+
+			if(adrV){
+				
+			  CountDeliveryCost(adrV.textContent,countOfProducts,totalCheck);
+			}
+			};
+
+
+			console.log(itemOfCart);
+			
+			
+		}
+		
+		}else{
+			console.log('cart is empty');
+			console.log(cart.length);
+
+			let imageSadCart = document.createElement('img');
+		
+			   imageSadCart.src = "/lib/meta/cartSad10.png";
+				
+
+				const addr = document.getElementById("addressValue");
+					const addrNull = document.getElementById("adrNull");
+
+					if(addr){
+							addr.after(imageSadCart);
+					}
+
+			if(addrNull){
+							addrNull.after(imageSadCart);
+					}
+		
+
+		}
+		}else{
+			console.log('cart in localStorage');
+
+			let arrayForProducts = [];
+
+			if(localStorage.getItem('cart') != null){
+
+			if(localStorage.getItem('cart') != '[]'){
+
+				arrOFcart = JSON.parse(localStorage.getItem('cart'));
+
+				for (let item of arrOFcart){
+
+					let a = item.product_Id;
+
+					console.log(item.product_Id);
+
+					const response = await fetch('/api/cart/find-item',{
+
+						method:'POST',
+						headers:{'Content-Type':'application/json'},
+						body:JSON.stringify(a)
+
+					});
+
+					const result = await response.json();
+
+					arrayForProducts.push(result);
+
+
+				}
+
+
+
+					const container = document.createElement('container');
+					const row = document.createElement('row');
+					row.classList.add("row","align-items-start")
+
+
+					const secondCol = document.createElement('div');
+					secondCol.classList.add("col-md-4");
+
+					const mainDivBill = document.createElement('div');
+					mainDivBill.classList.add("card", "bill-cart", "margin-for-bill");
+
+					const whiteDiv = document.createElement('div');
+					whiteDiv.classList.add("bill-second");
+
+					const beigeDiv = document.createElement('div');
+					beigeDiv.classList.add("bill-first");
+
+					const itemDiv = document.createElement('div');
+					itemDiv.classList.add("item");
+
+					const SecondItemDiv = document.createElement('div');
+					itemDiv.classList.add("item");
+
+					const check = document.createElement('h4');
+					check.classList.add("justify-content-start", "text-light1", "bill-description");
+					check.textContent= "Чек:";
+					check.id = "totalCheck";
+
+					const totalCount = document.createElement('h4');
+					totalCount.classList.add("justify-content-start", "text-light1", "bill-description");
+					totalCount.textContent= "Количество позиций:";
+					totalCount.id = "totalCount";
+
+					const deliveryPrice = document.createElement('h4');
+					deliveryPrice.classList.add("justify-content-start", "text-light1", "bill-description");
+					deliveryPrice.textContent= "Сумма доставки:";
+					deliveryPrice.id = "deliveryPrice";
+
+					const totalCost = document.createElement('h4');
+					totalCost.classList.add("justify-content-end","bill-all");
+					totalCost.textContent  ="ИТОГ:";
+					totalCost.id = "totalCost";
+
+
+					const buyBtn = document.createElement('button');
+					buyBtn.classList.add("bill-btn","justify-content-center");
+					buyBtn.type = "submit";
+					buyBtn.textContent = "ОФОРМИТЬ ЗАКАЗ";
+					buyBtn.id="buy-button";
+
+
+
+
+
+
+
+				   itemDiv.appendChild(totalCost);
+				   itemDiv.appendChild(buyBtn);
+				
+
+				   beigeDiv.appendChild(itemDiv);
+
+				SecondItemDiv.appendChild(check);
+					SecondItemDiv.appendChild(totalCount);
+					SecondItemDiv.appendChild(deliveryPrice);
+					whiteDiv.appendChild(SecondItemDiv);
+
+
+
+				   const cardDiv = document.createElement('div');
+				   cardDiv.classList.add("card","bill-cart","margin-for-bill");
+				   cardDiv.appendChild(whiteDiv);
+				   cardDiv.appendChild(beigeDiv);
+
+				   secondCol.appendChild(cardDiv);
+
+				  const fisrtCol = document.createElement('div');
+					fisrtCol.classList.add("col-md-6");
+
+
+
+					let total = 0;
+					let countOfProducts = 0;
+					let delivery = 0;
+					let totalCheck = 0;
+
+
+
+
+
+				for(let item of arrayForProducts){
+
+					
+
+			console.log(item);
+			let index = arrayForProducts.indexOf(item);
+			let actualAmount = arrOFcart[index].count;
+
+	        countOfProducts = countOfProducts + actualAmount;
+
+		totalCheck = totalCheck + (item.price*actualAmount);
+			total = total + (item.price * actualAmount);
+
+				let image = document.createElement('img');
+				image.classList.add("cart-images");
+				image.src = item.image;
+
+				let imageDiv = document.createElement('div');
+				imageDiv.classList.add("d-flex","justify-content-start");
+				imageDiv.appendChild(image);
+
+				let title = document.createElement('h4');
+				title.classList.add("text-light1");
+				title.textContent = item.title;
+
+				let titleDiv =  document.createElement('div');
+				titleDiv.classList.add("justify-content-start");
+				titleDiv.appendChild(title);
+
+				let price = document.createElement('h4');
+				price.classList.add("justify-content-start");
+				price.textContent = item.price + " рублей";
+
+				let totalPrice = document.createElement('h5');
+				totalPrice.classList.add("justify-content-start", "text-light1",  "addition-margin");
+				let multiply = item.price * actualAmount;
+				totalPrice.textContent = multiply + " рублей";
+
+				let priceAndTitleDiv = document.createElement('div');
+				priceAndTitleDiv.classList.add("item", "margin-for-text", "margin-for-top");
+				priceAndTitleDiv.appendChild(title);
+				priceAndTitleDiv.appendChild(price);
+				priceAndTitleDiv.appendChild(totalPrice);
+
+				let btnDiv = document.createElement('div');
+				btnDiv.classList.add("d-flex", "justify-content-lg-end" , "margin-for-plus-minus","me-3");
+
+				let btnPlus = document.createElement('button');
+
+				if(actualAmount >= 30){
+
+					console.log(item.count);
+				
+				btnPlus.classList.add("no-more-add-in-cart", "align-self-center","plus");
+				btnPlus.textContent = "+";
+				btnPlus.id = item.product_Id;
+				
+			
+			
+				}else{
+
+			   
+				btnPlus.classList.add("btn-add-cart", "align-self-center","plus");
+				btnPlus.textContent = "+";
+				btnPlus.id = item.product_Id;
+
+
+				}
+
+
+				let amount = document.createElement('h4');
+				amount.classList.add("card-text", "text-black" ,"align-self-center", "small-margin-for-plus-minus","amount");
+				amount.textContent = actualAmount;
+
+				let btnMinus = document.createElement('button');
+				btnMinus.textContent = "-";
+				btnMinus.classList.add("btn-add-cart", "align-self-center","small-margin-for-plus-minus","minus");
+				btnMinus.id = item.product_Id;
+
+				btnDiv.appendChild(btnPlus);
+				btnDiv.appendChild(amount);
+				btnDiv.appendChild(btnMinus);
+
+				let rowDiv = document.createElement('div');
+				rowDiv.classList.add("d-flex", "flex-row");
+				rowDiv.appendChild(imageDiv);
+				rowDiv.appendChild(priceAndTitleDiv);
+				rowDiv.appendChild(btnDiv);
+
+				let bodyDiv = document.createElement('div');
+				bodyDiv.classList.add("card-body");
+				bodyDiv.appendChild(rowDiv);
+
+
+
+				let mainDiv = document.createElement('div');
+				mainDiv.classList.add("card", "cart-card", "margin-for-all");
+				mainDiv.appendChild(bodyDiv);
+				mainDiv.id = item.product_Id;
+
+				fisrtCol.appendChild(mainDiv);
+
+
+
+
+				}
+				total = delivery + totalCheck;
+
+				console.log('dsd');
+				 row.appendChild(fisrtCol);
+				row.appendChild(secondCol);
+
+
+
+				container.appendChild(row);
+				const appendTo = document.getElementById('cartBar');
+				appendTo.after(container);
+
+
+
+
+
+				document.getElementById('totalCount').textContent =document.getElementById('totalCount').textContent + "  " + countOfProducts;
+
+				document.getElementById('deliveryPrice').textContent =document.getElementById('deliveryPrice').textContent + "  " + delivery + "₽";
+
+			  document.getElementById('totalCheck').textContent =document.getElementById('totalCheck').textContent + "  " + totalCheck + "₽";
+
+			  document.getElementById('totalCost').textContent =document.getElementById('totalCost').textContent + "  " + total + "₽";
+			 
+				
+			  }
+			}
+			else{
+
+				console.log('cart is empty');
+
+
+
+
+			}
+
+			
+			
+
+
+		}
+
+		});
+
+
+
+					 const changeAdddressMenuBtn = document.getElementById('dropDownMain');
+	   const dropdownMenu = document.querySelector('.dropdown-menu');
+
+		  dropdownMenu.addEventListener('click', function(e) {
+		   if (e.target.classList.contains('address-item')) {
+			   e.preventDefault();
+
+			   const item = e.target;
+			   let changeAdddressMain = changeAdddressMenuBtn.textContent;
+			   let selectedAddress = item.textContent;
+
+			   changeAdddressMenuBtn.textContent = selectedAddress;
+			   item.textContent = changeAdddressMain;
+		   }
+	   });
+
+		const ChangeAddressBtnModal = document.getElementById('ChangeAddressBtn');
+
+			 if(ChangeAddressBtnModal){
+
+					ChangeAddressBtnModal.addEventListener('click',async function(e){
+
+						e.preventDefault();
+
+						   const NewDefaultAddress = document.getElementById('dropDownMain').textContent;
+						   const token = localStorage.getItem('token');
+
+							  const response = await fetch('/api/change/change-default-address',{
+
+							  method:'POST',
+								 headers:{'Authorization':`Bearer ${token}`, 'Content-Type':'application/json'},
+									body:JSON.stringify({newphone:NewDefaultAddress})
+
+							  });
+
+								 const result = await response.json();
+
+									if(result.success){
+										console.log("default address changed")
+										location.reload();
+									}else{
+
+											 console.log("default address not changed")
+									}
+
+					});
+			 }
+
+
+
+
+
+
+				 document.addEventListener('DOMContentLoaded', function() {
+	
+		document.body.addEventListener('click',async function(e) {
+			if (e.target.classList.contains('plus')) {
+
+
+
+					if(localStorage.getItem('cart') != null){
+
+						console.log('btn is active');
+
+						const addBtn = e.target;
+
+				const arrayOFStorage = JSON.parse(localStorage.getItem('cart'));
+
+				const newArray = [];
+
+				for (let itemOfarr of arrayOFStorage){
+
+
+					if(itemOfarr.product_Id == addBtn.id){
+
+						if(itemOfarr.count >= 30){
+
+
+							addBtn.classList.remove("btn-add-cart");
+
+							
+
+							addBtn.classList.add("no-more-add-in-cart");
+							
+							newArray.push(itemOfarr);
+						}else{
+
+
+						itemOfarr.count = itemOfarr.count  +1 ;
+
+						newArray.push(itemOfarr);
+
+						const amountEl = document.getElementById(addBtn.id);
+
+						console.log(amountEl);
+
+						if(amountEl.classList.contains('.amount')){
+
+								amountEl.textContent = itemOfarr.count;
+
+						console.log(amountEl);
+
+						}
+						location.reload();
+						}
+					
+					}else{
+
+
+						newArray.push(itemOfarr);
+						
+					}
+					
+
+				}
+
+				localStorage.removeItem('cart');
+
+				localStorage.setItem('cart', JSON.stringify(newArray));
+
+					
+
+
+					}
+
+
+
+					if(localStorage.getItem('token') != null){
+
+
+				const item_ = e.target.id;
+
+				if(e.target.classList.contains("no-more-add-in-cart")){
+
+					console.log('add not allowed');
+				}else{
+				
+
+				const _token_ = localStorage.getItem('token');
+
+				const response =  await fetch('/api/cart/add', {
+
+					method:'POST',
+					headers:{'Authorization':`Bearer ${_token_}`, 'Content-Type':'application/json'},
+					body:JSON.stringify({newphone:item_})
+
+
+				});
+
+				const result_ = await response.json();
+
+
+
+				if(result_.success){
+
+					console.log('incresed');
+
+					location.reload();
+				}
+				else{
+
+					console.log('error');
+				}
+				}
+				}
+			}
+
+
+			
+
+
+
+
+			if (e.target.classList.contains('minus')) {
+
+
+					if(localStorage.getItem('cart') != null){
+
+						console.log('btn is active');
+
+						const addBtn = e.target;
+
+				const arrayOFStorage = JSON.parse(localStorage.getItem('cart'));
+
+				const newArray = [];
+
+				for (let itemOfarr of arrayOFStorage){
+
+
+					if(itemOfarr.product_Id == addBtn.id){
+
+
+
+						itemOfarr.count = itemOfarr.count  - 1 ;
+
+						if(itemOfarr.count != 0){
+
+						newArray.push(itemOfarr);
+
+						const amountEl = document.getElementById(addBtn.id);
+
+						console.log(amountEl);
+
+						if(amountEl.classList.contains('.amount')){
+
+								amountEl.textContent = itemOfarr.count;
+
+						console.log(amountEl);
+						}
+						}
+
+					}else{
+
+
+						newArray.push(itemOfarr);
+					}
+
+
+				}
+
+				localStorage.removeItem('cart');
+
+				localStorage.setItem('cart', JSON.stringify(newArray));
+
+				location.reload();
+
+
+					}
+
+
+					if(localStorage.getItem('token') != null){
+
+				const item = e.target.id;
+
+				
+
+				const _token = localStorage.getItem('token');
+
+				const response =  await fetch('/api/cart/subtract', {
+
+					method:'POST',
+					headers:{'Authorization':`Bearer ${_token}`, 'Content-Type':'application/json'},
+					body:JSON.stringify({newphone:item})
+
+
+				});
+
+				const result = await response.json();
+
+
+				if(result.success){
+
+					console.log('decresed');
+
+					location.reload();
+
+				}
+				else{
+
+					console.log('error');
+				}
+				}
+			}
+
+
+			
+
+
+			
+
+
+
+		});
+	});
+
+			 
+		
+	document.addEventListener('DOMContentLoaded' , function(){
+
+	  document.addEventListener('click', function(e) {
+		if (e.target && e.target.id === 'buy-button') {
+			e.preventDefault();
+			console.log('btn clicked');
+
+		  jQuery(function ($) {
+
+				
+		   $('#myModal').modal('show');
+
+		  });
+
+		  
+
+		}
+
+		if(e.target.classList.contains("bill-btn-prepered")){
+
+
+			 console.log('btn clicked');
+
+			 let switch_ = document.getElementById('switch');
+
+			  let bool = false;
+
+			 if(switch_.classList.contains('switch-on')){
+
+				 bool = true;
+			 }
+				
+
+			 async function LoadToOrders(boolVal,DeliveryPrice){
+
+				 let val = "-";
+
+				 if(boolVal){
+
+					 val= "+";
+
+				 }
+
+				 let deliveryPriceString = DeliveryPrice.toString();
+
+				 const token = localStorage.getItem('token');
+
+				 const request = await fetch('/api/cart/buy', {
+
+					 method:'POST',
+					 headers:{'Authorization':`Bearer ${token}`, 'Content-Type':'application/json'},
+					 body: JSON.stringify({
+						pickUp: val,
+						deliveryCost: deliveryPriceString
+					})
+
+				 });
+
+				 const response = await request.json();
+
+				 if(response.success){
+
+					 console.log(response);
+
+				 }else{
+
+					  console.log(response);
+				 }
+
+				}
+				 
+				
+
+				LoadToOrders(bool,dPrice);
+
+			 location.href="@Url.Action("OrderDone", "Home")";
+
+
+		  }
+
+		if(e.target.classList.contains("switch-btn")){
+
+		if(e.target.classList.contains("switch-on") == false){
+
+			const btnAddress = document.getElementById('ChangeAddress');
+
+				const btnNullAddress =  document.getElementById('nullAddressText');
+
+			if(btnAddress){
+
+			  e.target.classList.add('switch-on');
+
+				  document.getElementById('addressValue').textContent = "Садовническая улица, 24 ст6а";
+
+				  document.getElementById('ChangeAddress').remove();
+
+				  const deliverPriceElement = document.getElementById('deliveryPrice');
+
+			const totalCostElement = document.getElementById('totalCost');
+
+			
+					deliverPriceElement.textContent = "Сумма доставки: 0₽";
+
+		totalCostElement.textContent = "ИТОГ: " + totalCostForSwitch + "₽";
+		buybtn = document.getElementById("buy-btn");
+			buybtn.classList.remove("bill-btn");
+					  buybtn.classList.add("bill-btn-prepered");
+
+
+			}
+
+			if(btnNullAddress){
+
+			      e.target.classList.add('switch-on');
+
+				  document.getElementById('nullAddressText').textContent = "Садовническая улица, 24 ст6а";
+				  document.getElementById('goToAccoutPage').remove();
+
+				  const btn = document.getElementById('buy-btn');
+
+				  btn.classList.remove("bill-btn");
+					btn.classList.add("bill-btn-prepered");
+
+					
+
+					// 	buyBtn.classList.add("bill-btn-prepered","justify-content-center");
+					// }else{
+					// 	buyBtn.classList.add("bill-btn","justify-content-center");
+			}
+			  
+
+		}else{
+
+
+			location.reload();
+
+		}
+
+		}
+	});
+	});
+
+
+	
+		
+		
+
+</script>
+
+
+
+
+
+

@@ -1,0 +1,1095 @@
+﻿@*
+  
+*@
+@{
+}
+
+<style>
+    body {
+        background-image: linear-gradient(to bottom,#FFF5DA, #FFD1A6);
+    }
+</style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+            <img class="card-img margin_account_header" src="~/lib/meta/icon.png" />
+            </div>
+            <div class="col-md-9">
+                <h1 class="account_h1 margin_account_header">Ваш профиль</h1>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+         
+            <p class="account_p" id="phn"></p>
+
+    <p class="account_p margin_account_password">Пароль: ***********</p>
+            </div>
+        
+            <div class="col-md-3">
+            <p class="account_p edit_account btn-change-on-form">
+
+                <button class="btn-change-on-form account_p edit_account" type="submit" id="ChangePhoneOnForm" data-bs-toggle="modal" data-bs-target="#ModalChangePhone">изменить</button>
+                    </p>
+             @*    <p class="account_p margin_account_password edit_account">изменить</p> *@
+
+            <p class="account_p edit_account btn-change-on-form">
+
+                <button class="btn-change-on-form account_p edit_account" type="submit" id="ModalMailAddOnForm" data-bs-toggle="modal" data-bs-target="#ModalMailAdd">изменить</button>
+            </p>
+            </div>
+          </div>
+    </div>
+
+
+
+    <div class="container margin-minus-password">
+    <h1 class="account_h2 margin_account_password">Адреса доставки</h1>
+        <div class="row">
+            <div class="col-md-9">
+  
+    <p class="account_p" id="addressValue"> Адреса отсутствуют</p>
+    </div>
+
+    <div class="col-md-3">
+                
+            <p class="account_p  edit_account">
+                <button class="btn-change-on-form account_p edit_account" type="submit" id="ChangeAddress" data-bs-toggle="modal" data-bs-target="#ChangeAddressModal">изменить адрес</button>
+            </p>
+           </div>
+
+    </div>
+    </div>
+
+<div class="container mt-3">
+        <div class="row">
+            <div class="col-md-9">
+            <input id="address" name="address" type="text" class="form-control textbox-change-modal" placeholder="Введите адрес для добавления" />
+            <link href="~/css/suggestions.min.css" rel="stylesheet" />
+            </div>
+        <div class="col-md-3">
+            <button class="btn-change-on-form account_p edit_account" type="submit" id="AddAddressBtn">добавить адрес</button>
+        </div>
+        </div>
+    </div>
+
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="account_h2 margin_account_password">История заказов</h1>
+      
+        </div>
+        <div class="col-md-3" id="col-go-to-orders">
+            <a class="account_p margin_account_password edit_account" type="button" id="go-to-order-page"  href="@Url.Action("OrderStory", "Home")">История пуста</a>
+        </div>
+
+      @*   <div class="col-md-3" id="col-go-to-orders">
+        <p class="account_p edit_account">
+            <a class="margin_account_password" id="go-to-order-page">История пуста</a>
+        </p>
+        </div> *@
+    </div>
+</div>
+
+
+<button type="submit" class="btn  btn-exit-account" id="exitBtn">Выход</button>
+
+
+
+
+
+
+@* <div class="modal fade align-content-center" id="ModalAddAddress">
+    <div class="modal-dialog">
+        <div class="modal-content change-phone-modal">
+        <div class="modal-body">
+                <div class="mb-2">
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Адрес" id="addAddressText" name="AddressText"/>
+                    
+                </div>
+                <h11 class="err-change-phone" id="err-add-address"></h11>
+                <div class="mb-4">
+                    <button type="submit" id="AddAddressBtn" class="btn-change-modal">Добавить адрес</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ *@
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+
+            <strong class="me-auto" id="header">Заголовок сообщения</strong>
+
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+        </div>
+        <div class="toast-body" id="message">
+            Текст сообщения
+        </div>
+    </div>
+</div>
+
+
+ <div class="modal fade align-content-center" id="ChangeAddressModal">
+ <div class="modal-dialog">
+
+        <div class="modal-content dropdown-modal">
+
+         <div class="modal-body">
+
+
+             <div class="mb-4">
+                    <button type="submit" class="btn dropdown-toggle dropdown-main-item-style" data-bs-toggle="dropdown" id="dropDownMain">
+                    Главный адрес
+                </button>
+
+                    <ul class="dropdown-menu" id="pointPfMenu">
+                       
+                 </ul>
+                </div>
+                <div class="mb-1 margin-btn">
+                    <button type="submit" id="ChangeAddressBtn" class="btn-change-modal">Выбрать адрес</button>
+                </div>
+         </div>
+
+     </div>
+</div>
+
+ </div>
+
+
+
+
+
+
+
+
+<div class="modal fade align-content-center" id="ModalChangePhone">
+    <div class="modal-dialog ">
+        <div class="modal-content change-phone-modal">
+
+   
+        <div class="modal-body">
+            <div class="mb-2">
+
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Телефон" id="changePhoneText">
+            </div>
+
+                <h11 class="err-change-phone" id="err-change-phone"></h11>
+           
+                <div class="mb-4">
+                    <button type="submit" id="ChangePhoneModalBtn" class="btn-change-modal">Изменить телефон</button>
+                </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade align-content-center" id="ModalChangePassword">
+    <div class="modal-dialog ">
+        <div class="modal-content change-phone-modal">
+
+
+            <div class="modal-body">
+                <div class="mb-2">
+
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Введите ваш пароль" id="changePasswordText">
+                </div>
+
+                <h11 class="err-change-phone" id="err-change-pass"></h11>
+
+                <div class="mb-4">
+                    <button type="submit" id="ChangePasswordModalBtn" class="btn-change-modal">Далее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="modal fade align-content-center" id="ModalNewPassword">
+    <div class="modal-dialog ">
+        <div class="modal-content change-password-modal">
+
+
+            <div class="modal-body">
+                <div class="mb-2">
+
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Введите новый пароль" id="NewPasswordText">
+                </div>
+
+                <div class="mb-2">
+
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Подтвердите пароль" id="NewPasswordTextSecond">
+                </div>
+
+                <h11 class="err-change-phone" id="err-change-new-pass"></h11>
+
+                <div class="mb-4">
+                    <button type="submit" id="NewPasswordModalBtn" class="btn-change-modal">Далее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade align-content-center" id="ModalMailAdd">
+    <div class="modal-dialog ">
+        <div class="modal-content change-phone-modal">
+
+
+            <div class="modal-body">
+                <div class="mb-2">
+
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Введите электронную почту" id="addMail">
+                </div>
+
+                <h11 style="color:#7E7E7E" id="change-mail">
+                    Вы получите письмо с
+                    кодом для смены пароля
+                </h11>
+
+                <div class="mb-4">
+                    <button type="submit" id="AddMaillBtn" class="btn-change-modal-mini">Далее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="modal fade align-content-center" id="ModalCodeAdd">
+    <div class="modal-dialog ">
+        <div class="modal-content change-phone-modal">
+
+
+            <div class="modal-body">
+                <div class="mb-2">
+
+                    <input type="text" class="form-control textbox-change-modal" placeholder="Введите код подтверждения" id="addCode">
+                </div>
+
+                <h11 class="err-change-phone" id="err-new-code"></h11>
+
+                <div class="d-flex flex-row">
+
+                <div class= "d-flex justify-content-around mb-4" >
+                        <button type="submit" id="AddCodeBtn" class="btn-change-modal-mini-used">Далее</button>
+                </div>
+                    <div class="ms-5 d-flex justify-content-end mb-4">
+                        <button type="submit" id="AskCodeBtn" class="btn-change-modal-new-code-not-used">Получить новый код</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<script src="~/js/suggestions.min.js"></script>
+<script src="~/js/email.min.js"></script>
+<script>
+    
+    
+</script>
+<script>
+
+    let lat ="";
+    let lon="";
+     let code =0;
+     let countOfTries = 0;
+     let newPassword = "";
+     let mail ="";
+
+
+    function ValidateText(input){
+
+           
+              if(input === '' ){
+                       document.getElementById('err-change-phone').textContent = "Введите номер телефона";
+                   
+                       return false
+              }
+
+              return true
+
+    }
+
+
+   
+
+       if(localStorage.getItem('token') != null){
+   
+    window.addEventListener('load', async function(){
+
+                 
+
+        const token = localStorage.getItem('token');
+
+           const responceOrders = await fetch('/api/change/is-orders-empty',{
+
+
+               method:'POST',
+                headers:{
+                'Authorization':`Bearer ${token}`,
+                'Content-Type':'application/json'
+           }
+
+           });
+
+              const resultFromOrders =  await responceOrders.json();
+
+                 if(resultFromOrders.success == false){
+                     console.log("orders are not empty");
+                            const goToOrdersPage = document.getElementById("go-to-order-page");
+                               goToOrdersPage.textContent = "К списку заказов";
+                                 
+                              
+                 }else{
+                        console.log("orders are empty");
+                          
+                 }
+
+
+    const responsePhone = await fetch('/api/change/get-phone',
+
+
+    {
+        method:'POST',
+        headers:{
+             'Authorization':`Bearer ${token}`,
+             'Content-Type':'application/json'
+        }
+       
+    });
+
+    const ph = await responsePhone.json();
+    console.log(ph.phone);
+    document.getElementById('phn').textContent = ph.phone;
+          document.getElementById('addressValue').textContent = ph.address;
+                 document.getElementById('dropDownMain').textContent = ph.address;
+
+                      const addresses =  ph.list;
+
+                                     const menu = document.getElementById('pointPfMenu');
+                                         let fragment = new DocumentFragment();
+                  addresses.forEach((address, index) => {
+
+                            if(address!=ph.address){
+
+                      let addressElement = document.createElement('li');
+
+                          addressElement.classList.add("dropdown-item", "dropdown-items-style","address-item");
+
+                            addressElement.textContent = address;
+
+                               fragment.append(addressElement);
+
+                                       menu.append(addressElement);
+                            }
+       });
+   
+
+                console.log(ph.list);
+
+    });
+ }else{
+            document.getElementById('phn').textContent = "Вход не выполнен";
+ }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+            
+
+
+            const cngBtn = document.getElementById('ChangePhoneModalBtn');
+
+            
+        
+       jQuery( function ($) {
+        $('#changePhoneText').mask("+79999999999", { placeholder: "" });
+
+
+              $('#ModalChangePhone').on('show.bs.modal',function(){
+
+             document.getElementById('err-change-phone').textContent = " ";
+
+                    
+
+                 $('#changePhoneText').val('');
+
+               
+              });
+
+
+                  $('#ModalChangePassword').on('show.bs.modal',function(){
+
+                document.getElementById('err-change-pass').textContent = " ";
+
+
+
+                    $('#changePasswordText').val('');
+
+
+                 });
+
+                          $('#ModalMailAdd').on('show.bs.modal',async function(e){
+
+
+
+                              
+                                           console.log("mail form loaded");
+
+                                            const formMail = document.getElementById("addMail");
+const tooken = localStorage.getItem('token');
+                               const responseToMail = await fetch('/api/change/load-mail',{
+                                      method:'POST',
+              headers:{
+                      'Authorization':`Bearer ${tooken}`,
+                  'Content-Type':'application/json'
+              }
+                               });
+
+                                   const resultMail = await responseToMail.json();
+
+                                  $('#addMail').val(resultMail.message);
+
+                                          mail = resultMail.message;
+                    });
+
+
+                              $('#ModalNewPassword').on('show.bs.modal',function(){
+
+
+
+                                       document.getElementById('err-change-new-pass').textContent = " ";
+                                $('#NewPasswordTextSecond').val('');
+                                     $('#NewPasswordText').val('');
+
+                       });
+
+
+
+                                    $('#ModalCodeAdd').on('show.bs.modal',function(){
+
+
+                                                document.getElementById('AskCodeBtn').classList.add('btn-change-modal-new-code-not-used');
+            document.getElementById('AskCodeBtn').classList.remove('btn-change-modal-new-code-used');
+                                             document.getElementById('err-new-code').textContent = " ";
+
+                                           $('#addCode').val('');
+
+                          });
+
+
+                          
+                   
+                              $('#address').val('');
+
+                                 
+    });
+
+   
+        if(cngBtn) {cngBtn.addEventListener('click' ,async function (e) {
+       e.preventDefault();
+           const newPhone =   document.getElementById('changePhoneText').value;
+       if(localStorage.getItem('token') ==null){
+
+              document.getElementById('err-change-phone').textContent = "Необходимо войти или зарегистрироваться";
+
+       }else{
+
+                 if(ValidateText(newPhone) == true){
+
+       
+          console.log(newPhone);
+       const token1 = localStorage.getItem('token');
+
+      
+
+       const response = await fetch('/api/change/change-phone',{
+
+           method:'POST',
+           headers:{
+               'Authorization':`Bearer ${token1}`,
+               'Content-Type':'application/json'
+           },
+           body:JSON.stringify({newphone: newPhone})
+
+       });
+
+           const result = await response.json();
+
+       if(result.success){
+          
+         
+           console.log('phone was changed');
+           localStorage.removeItem('token');
+           localStorage.setItem('token',result.token);
+            location.reload();
+       
+
+       }else{
+
+
+             $('#changePhoneText').val('');
+             document.getElementById('err-change-phone').textContent = result.message;
+             console.log('phone was not changed');
+       
+       }
+       }
+
+
+
+       }
+
+
+
+        });
+     }
+
+
+
+          const btnAddAdress = document.getElementById('AddAddressBtn');
+
+
+
+               if(btnAddAdress){
+
+        
+                      btnAddAdress.addEventListener('click', async function (e){
+
+
+
+                      e.preventDefault();
+
+                      const _token = localStorage.getItem('token');
+
+                         const _address = document.getElementById('address').value;
+
+                         let latValue = lat;
+
+                         let longValue = lon;
+
+                         if(localStorage.getItem('token') ==null){
+
+                    document.getElementById('err-add-address').textContent = "Необходимо войти или зарегистрироваться";
+
+          }else{
+
+                    if(_address != ""){
+
+                            
+
+                            console.log(_address);
+                      const response = await fetch ('/api/change/add-address',{
+
+                      method:'POST',
+
+                            headers:{'Authorization':`Bearer ${_token}`,'Content-Type':'application/json'},
+                                  body: JSON.stringify({
+                                      address: _address,
+                                      lat:latValue,
+                                      lng:longValue
+                                  
+                                  }),
+                      
+
+                      });
+
+                            
+                         const result = await response.json();
+
+                             console.log(result);
+
+                            if(result.success){
+
+                             console.log('address added');
+
+                             location.reload();
+
+                         }else{
+
+
+                                   console.log('address not added');
+    const toastLiveExample = document.getElementById('liveToast')
+
+
+              const header =document.getElementById("header");
+              header.textContent = "Адрес не добавлен";
+
+              const msg =document.getElementById("message");
+              msg.textContent = result.message;
+
+            const toast = new bootstrap.Toast(toastLiveExample)
+            toast.show()
+               const input =document.getElementById('address');
+                  input.textContent=" ";
+                         }
+
+                         
+                         }
+                         }
+               });
+
+               }
+
+
+
+
+
+
+                     const changeAdddressMenuBtn = document.getElementById('dropDownMain');
+       const dropdownMenu = document.querySelector('.dropdown-menu');
+
+       if (!changeAdddressMenuBtn || !dropdownMenu) {
+           console.error(' Элементы не найдены!');
+           return;
+       }
+
+      
+       dropdownMenu.addEventListener('click', function(e) {
+           if (e.target.classList.contains('address-item')) {
+               e.preventDefault();
+
+               const item = e.target;
+               let changeAdddressMain = changeAdddressMenuBtn.textContent;
+               let selectedAddress = item.textContent;
+
+               changeAdddressMenuBtn.textContent = selectedAddress;
+               item.textContent = changeAdddressMain;
+           }
+       });
+
+
+
+          const ChangeAddressBtnModal = document.getElementById('ChangeAddressBtn');
+
+             if(ChangeAddressBtnModal){
+
+                    ChangeAddressBtnModal.addEventListener('click',async function(e){
+
+                        e.preventDefault();
+
+                           const NewDefaultAddress = document.getElementById('dropDownMain').textContent;
+                           const token = localStorage.getItem('token');
+
+                              const response = await fetch('/api/change/change-default-address',{
+                              
+                              method:'POST',
+                                 headers:{'Authorization':`Bearer ${token}`, 'Content-Type':'application/json'},
+                                    body:JSON.stringify({newphone:NewDefaultAddress})
+
+                              
+                              });
+
+                                 const result = await response.json();
+
+                                    if(result.success){
+                                        console.log("default address changed")
+                                        location.reload();
+                                    }else{
+
+                                             console.log("default address not changed")
+                                    }
+
+                    });
+             }
+
+
+        });
+
+
+       const exBtn = document.getElementById('exitBtn');
+
+      if(exBtn){
+      exBtn.addEventListener('click', function(e){
+
+
+       e.preventDefault();
+          localStorage.removeItem('phone');
+          localStorage.removeItem('token');
+
+           window.location.href ='/';
+
+      });
+      }else{
+          console.log('not found');
+      }
+
+
+          const token ="b6b3ef64d95d6ef80c6c18be5c0c75c8c6a8508a";
+          const input =document.getElementById("address");
+               try {
+       Dadata.createSuggestions(input, {
+           token: token,
+              type: "address",
+               hint: false,
+               bounds: "city",
+               onSelect: function(suggestion){
+                 console.log(suggestion);
+                             lat = suggestion.data.geo_lat;
+                                   lon = suggestion.data.geo_lon;
+                                       console.log("широта ",lat);
+                 console.log("долгота",lon);
+               },
+                           onSearchStart: function(query) {
+                             delete query.locations_boost;
+                              },
+                                 restrict_value: true
+       });
+       }catch (error){
+           console.log(error);
+               const toastLiveExample = document.getElementById('liveToast')
+
+
+                 const header =document.getElementById("header");
+                 header.textContent = "Ошибка";
+
+                 const msg =document.getElementById("message");
+                 msg.textContent = "Поиск подсказок недоступен";
+
+               const toast = new bootstrap.Toast(toastLiveExample)
+               toast.show()
+               
+       }
+
+
+
+          const mailBtn = document.getElementById("AddMaillBtn");
+
+             if(mailBtn){
+                       const mailInput = document.getElementById("addMail");
+                       mailBtn.addEventListener('click',async function(e){
+
+                     e.preventDefault();
+
+                     console.log('mail added');
+
+                              if(mailInput.value === '' ){
+
+
+
+                        }else{
+                                   const tokenn = localStorage.getItem('token');
+                                const responseNewMail = await fetch('/api/change/refresh-or-add-mail',{
+                method:'POST',
+                    headers:{'Authorization':`Bearer ${tokenn}`,'Content-Type':'application/json'},
+                            body:JSON.stringify({newphone:mailInput.value})
+            });
+
+                const result = await responseNewMail.json();
+
+
+                         console.log(result.message);
+
+                            jQuery(function ($) {
+                        GenerateCode();
+
+
+                                        mail = mailInput.value;
+        
+                                      console.log(code);
+                           $('#ModalMailAdd').modal('hide');
+                                  $('#ModalChangePassword').modal('show');
+                        });
+                        }
+                 });
+
+
+             }
+
+
+
+                const enterActualPassword = document.getElementById('ChangePasswordModalBtn');
+
+
+                   if(enterActualPassword){
+                          enterActualPassword.addEventListener('click',async function(e){
+
+
+                                       e.preventDefault();
+
+
+                      const enterActualPasswordInput = document.getElementById('changePasswordText');
+
+                                  console.log('password typed');
+
+                                           if(enterActualPasswordInput.value === '' ){
+
+       document.getElementById('err-change-pass').textContent = "Введите пароль";
+
+                           }else{
+                               const t = localStorage.getItem('token');
+                                   const passwordTyped = await fetch('/api/change/entry-password',{
+
+                                       method:'POST',
+                                           headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},
+                                           body:JSON.stringify({newphone:enterActualPasswordInput.value})
+                                   });
+
+                                       const resultOfVerification = await passwordTyped.json();
+
+                                           if(resultOfVerification.success){
+
+                                      jQuery(function ($) {
+
+                                     $('#ModalChangePassword').modal('hide');
+
+                                    $('#ModalNewPassword').modal('show');
+                                     
+                           });
+                           }else{
+                                           document.getElementById('err-change-pass').textContent = resultOfVerification.message;
+                           }
+                           }
+                          });
+
+
+                   }
+
+
+
+                         const newPaswordModal = document.getElementById('NewPasswordModalBtn');
+
+                         if(newPaswordModal){
+                                newPaswordModal.addEventListener('click', async function(e){
+
+                                       const firstInput = document.getElementById('NewPasswordTextSecond');
+                                                 const secondInput = document.getElementById('NewPasswordText');
+
+                                    e.preventDefault();
+
+
+                                                          if(firstInput.value === '' ||secondInput.value === ''){
+
+                                        document.getElementById('err-change-new-pass').textContent = "Зaполните поля";
+
+                                         
+
+                              }else{
+
+                                                      if(firstInput.value.length < 6|| secondInput.value.length < 6){
+                                                                  document.getElementById('err-change-new-pass').textContent = "Минимальная длина - 6 символов";
+                                                      }else{
+
+                                          if(firstInput.value === secondInput.value){
+
+                                                         jQuery(function ($) {
+
+
+
+                                                                console.log(mail);
+
+
+
+
+
+
+                // Собираем данные из формы
+            const templateParams = {
+                                    'email': mail,
+
+                        'passcode': code
+            };
+
+                    emailjs.init('ZkSPdS_s5qSF5HvSZ');
+
+            // Отправка через EmailJS
+                            emailjs.send('contact_service', 'contact_form', templateParams)
+                .then(function(response) {
+                        console.log('Email успешно отправлен!');
+                    console.log(mail);
+                        newPassword = firstInput.value;
+                           $('#ModalNewPassword').modal('hide');
+
+                         $('#ModalCodeAdd').modal('show');
+                })
+                .catch(function(error) {
+                    console.error('Ошибка:', error);
+                    console.log('Ошибка отправки: ' + error.text);
+                });
+
+                                       });
+                                       
+                                              }else{
+
+                                                    document.getElementById('err-change-new-pass').textContent = "Пароли не одинаковы";
+                                    }
+                                    }
+                              }
+
+                                });
+                         }
+
+
+
+                            const codeBtn = document.getElementById('AddCodeBtn');
+
+                                    const sentNewCodeBtn = document.getElementById('AskCodeBtn');
+
+
+                               if(codeBtn){
+                                      codeBtn.addEventListener('click', async function(e){
+
+                                          e.preventDefault();
+
+                                             const codeInput = document.getElementById('addCode');
+
+
+                                                if(codeInput.value ===''){
+
+                                                              document.getElementById('err-new-code').textContent = "Введите код";
+
+                                                }else
+                                                {
+
+                                                        if(codeInput.value != code){
+                                                                 document.getElementById('err-new-code').textContent = "Неверный код";
+
+        document.getElementById('AskCodeBtn').classList.remove('btn-change-modal-new-code-not-used');
+        document.getElementById('AskCodeBtn').classList.add('btn-change-modal-new-code-used');
+
+                        
+                                                        }else{
+                                                                const tkn = localStorage.getItem('token')
+                                                                    const responceNewPassword = await fetch('/api/change/new-password',{
+
+                    method:'POST',
+                        headers:{'Authorization':`Bearer ${tkn}`,'Content-Type':'application/json'},
+                        body:JSON.stringify({newphone:newPassword})
+
+                });
+
+                    const answ = await responceNewPassword.json();
+                        if(answ.success){
+                                       const toastLiveExample = document.getElementById('liveToast')
+
+                                                jQuery(function ($) {
+
+
+
+
+                                                           $('#ModalCodeAdd').modal('hide');
+
+
+
+
+                                              });
+
+
+                     const header =document.getElementById("header");
+                     header.textContent = "Уведомление";
+
+                     const msg =document.getElementById("message");
+                     msg.textContent = "Пароль был успешно изменён";
+
+                   const toast = new bootstrap.Toast(toastLiveExample)
+                   toast.show()
+
+                       localStorage.getItem('token') = answ.token;
+
+                  }else{
+
+
+                  }
+                                                     
+                                          }
+                                                }
+
+
+                                      });
+
+                               }
+
+                                        if(sentNewCodeBtn){
+                                                         sentNewCodeBtn.addEventListener('click', async function(e){
+                                                             e.preventDefault();
+                                       document.getElementById('err-new-code').textContent = "Новый код отправлен на почту";
+     document.getElementById('AskCodeBtn').classList.remove('btn-change-modal-new-code-used');
+            document.getElementById('AskCodeBtn').classList.add('btn-change-modal-new-code-not-used');
+           
+                                                  const codeInput = document.getElementById('addCode');
+                                                codeInput.value ='';
+                                                                     GenerateCode();
+                    const templateParams = {
+                                            'email': mail,
+
+                                'passcode': code
+                    };
+
+                            emailjs.init('ZkSPdS_s5qSF5HvSZ');
+
+                    // Отправка через EmailJS
+                                    emailjs.send('contact_service', 'contact_form', templateParams)
+                        .then(function(response) {
+                                console.log('Email успешно отправлен!');
+                            console.log(mail);
+
+                        })
+                        .catch(function(error) {
+                            console.error('Ошибка:', error);
+                            console.log('Ошибка отправки: ' + error.text);
+                     document.getElementById('err-new-code').textContent = "Не удалось отправить код";
+                        });
+
+
+                                                         });
+                                            }
+
+
+
+
+
+                                 function GenerateCode(){
+                                          const min = 1000;
+        const max = 9999;
+        code = Math.floor(Math.random() * (max - min + 1)) + min;
+                                };
+
+    //       geo_lat:"47.277256" //широта
+    // geo_lon:"39.512688" //долгота
+
+</script>
+

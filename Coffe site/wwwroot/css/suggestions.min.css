@@ -1,0 +1,56 @@
+.suggestions-nowrap{white-space:nowrap}.suggestions-input{-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%}.suggestions-input::-ms-clear{display:none}.suggestions-wrapper{position:relative;margin:0;padding:0;vertical-align:top;-webkit-text-size-adjust:100%}.suggestions-suggestions{background:#fff;border:1px solid #999;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;cursor:default;left:0;min-width:100%;position:absolute;z-index:9999;-webkit-text-size-adjust:100%}.suggestions-wrapper:not(.suggestions-wrapper--mobile) .suggestions-suggestion_hidden-desktop{display:none}.suggestions-wrapper--mobile .suggestions-suggestion_hidden-mobile{display:none}.suggestions-suggestions strong{font-weight:400;color:#39f}.suggestions-suggestion{padding:4px;overflow:hidden}.suggestions-suggestion:hover{background:#f7f7f7}.suggestions-selected,.suggestions-selected:hover{background:#f0f0f0}.suggestions-hint{padding:4px;white-space:nowrap;overflow:hidden;color:#777;font-size:85%;line-height:20px;text-overflow:ellipsis}.suggestions-wrapper:not(.suggestions-wrapper--mobile) .suggestions-suggestions--with-promo .suggestions-hint{max-width:calc(100% - 80px);padding-right:0}.suggestions-subtext{color:#777}.suggestions-subtext_inline{display:inline-block;min-width:6em;vertical-align:bottom;margin:0 .5em 0 0}.suggestions-subtext-delimiter{display:inline-block;width:2px}.suggestions-subtext_label{margin:0 0 0 .25em;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;padding:0 3px;background:#f5f5f5;font-size:85%}.suggestions-value[data-suggestion-status=LIQUIDATED]{position:relative}.suggestions-value[data-suggestion-status=LIQUIDATED]:after{position:absolute;left:0;right:0;top:50%;border-top:1px solid rgba(0,0,0,.4);content:""}.suggestions-promo{font-size:85%;color:#777;padding:4px;text-align:center}.suggestions-promo a{color:#777;display:block;filter:grayscale(100%);line-height:20px;text-decoration:none}.suggestions-promo a:hover{filter:grayscale(0)}.suggestions-promo svg{height:20px;vertical-align:bottom}.suggestions-wrapper:not(.suggestions-wrapper--mobile) .suggestions-suggestions:not(.suggestions-suggestions--nohint) .suggestions-promo{position:absolute;top:0;right:0;text-align:left}
+
+
+/* ========== ФИКС ДЛЯ МОДАЛОК BOOTSTRAP ========== */
+
+/* 1. СИЛЬНО повышаем z-index для подсказок */
+.modal .suggestions-suggestions {
+    z-index: 2147483647 !important; /* Максимальный z-index */
+    position: fixed !important; /* Не absolute, а fixed! */
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+/* 2. Контейнер тоже должен быть выше */
+.modal .suggestions-wrapper {
+    z-index: 2147483646 !important;
+    position: relative !important;
+}
+
+/* 3. Убираем все overflow у родителей модалки */
+.modal {
+    overflow: visible !important;
+}
+
+.modal-dialog {
+    overflow: visible !important;
+}
+
+.modal-content {
+    overflow: visible !important;
+}
+
+.modal-body {
+    overflow: visible !important;
+}
+
+/* 4. Фикс для backdrop (чёрный фон модалки) */
+.modal-backdrop {
+    z-index: 1040 !important; /* Ниже подсказок */
+}
+
+/* 5. Явно позиционируем подсказки относительно input */
+.modal input[data-dadata] ~ .suggestions-suggestions {
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* 6. Если всё равно не видно - делаем видимым насильно */
+.modal .suggestions-suggestions.debug {
+    border: 3px solid red !important;
+    background: yellow !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}

@@ -1,0 +1,80 @@
+﻿
+
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    var backcolor = ViewBag.PageColor ?? "#FFF9DF";
+   
+}
+
+
+<style>
+
+    body{
+        background-image: linear-gradient(to bottom,#FFF5DA, #FFD1A6);
+    }
+
+</style>
+
+
+
+
+<div class="container">
+    <div class="row">
+            <div class="col-md-3">
+              <div class="overlay-content">
+
+                    <div class="row">
+                        <div class="col-md-1 d-flex flex-column justify-content-around me-1 mb-3">
+                        <img class="social" src="~/lib/meta/telegram.png" alt="tg">
+                        </div>
+                        <div class="col-md-1 d-flex flex-column justify-content-around me-1 mb-3">
+                        <img class="social" src="~/lib/meta/wk.png" alt="wk">
+                        </div>
+                        <div class="col-md-1 d-flex flex-column justify-content-around me-1 mb-3">
+                        <img class="social" src="~/lib/meta/ok.png" alt="ok">
+
+                        </div>
+                    </div>
+                
+    <h1 class="text-black ">
+        Добро пожаловать
+        в кофейню
+        Coffe Site!
+    </h1>
+
+      <p class="header1">
+        У нас огромный опыт варки кофе и
+        
+    </p>
+                <p class="header1">
+                    
+                    работы с клиентами
+                </p>
+          
+               
+
+
+            <a class="btn first-button" href="@Url.Action("Sells", "Home")" type="button">Перейти к акциям</a>
+            </div>
+        </div>
+    <div class="col-md-9">
+            <img class="card-img main-image img-fluid background-image" src="~/lib/meta/81aMH7Dk7uL.jpg" alt="Coffe image">
+             
+  
+    </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffe site", "Coffe site\Coffe site.csproj", "{EC1F8C67-20BC-4396-925E-03AEB2C9C493}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC1F8C67-20BC-4396-925E-03AEB2C9C493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1F8C67-20BC-4396-925E-03AEB2C9C493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1F8C67-20BC-4396-925E-03AEB2C9C493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1F8C67-20BC-4396-925E-03AEB2C9C493}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

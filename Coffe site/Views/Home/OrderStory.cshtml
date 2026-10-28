@@ -1,0 +1,430 @@
+﻿
+@{
+    ViewData["Title"] = "OrderStory";
+}
+
+<style>
+	body {
+		background-image: linear-gradient(to bottom,#FFF5DA, #FFD1A6);
+	}
+</style>
+
+<div class="container cart-top-margin" id="orderStoryBar">
+	<div class="row">
+		<div class="col-md-1">
+			<img class="card-img margin_account_header margin-address" src="~/lib/meta/cart.png" />
+		</div>
+		<div class="col-md-9">
+			<h1 class="account_h1 margin_account_header margin-address">История заказов</h1>
+		</div>
+	</div>
+</div>
+@* 
+<div class="container">
+	<div class="row align-items-start">
+
+		<div class="col-md-6">
+
+			<div class="card cart-card margin-for-all">
+				<div class="card-body">
+					<div class="d-flex flex-row">
+
+						<div class="d-flex justify-content-start">
+							<img class="cart-images" src="~/lib/meta/americano.jpg" alt="cinnabon" />
+						</div>
+
+						<div class="item margin-for-text margin-for-top">
+							<div class="justify-content-start">
+								<h4 class="text-light1">
+									Горячий Американо
+								</h4>
+							</div>
+
+							<h4 class="justify-content-start ">
+								200 рублей
+							</h4>
+						</div>
+
+						
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="card cart-card margin-for-all">
+				<div class="card-body">
+					<div class="d-flex flex-row">
+
+						<div class="d-flex justify-content-start">
+							<img class="cart-images" src="~/lib/meta/americano.jpg" alt="cinnabon" />
+						</div>
+
+						<div class="item margin-for-text margin-for-top">
+							<div class="justify-content-start">
+								<h4 class="text-light1">
+									Горячий Американо
+								</h4>
+							</div>
+
+							<h4 class="justify-content-start ">
+								200 рублей
+							</h4>
+						</div>
+
+						
+					</div>
+				</div>
+			</div>
+
+
+			<div class="card cart-card margin-for-all">
+				<div class="card-body">
+					<div class="d-flex flex-row">
+
+						<div class="d-flex justify-content-start">
+							<img class="cart-images" src="~/lib/meta/americano.jpg" alt="cinnabon" />
+						</div>
+
+						<div class="item margin-for-text margin-for-top">
+							<div class="justify-content-start">
+								<h4 class="text-light1">
+									Горячий Американо
+								</h4>
+							</div>
+
+							<h4 class="justify-content-start ">
+								200 рублей
+							</h4>
+						</div>
+
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+
+
+		<div class="col-md-4">
+			<div class="card bill-cart margin-for-bill">
+
+				<div class="bill-second2">
+
+					<div class="item">
+						<h4 class="justify-content-start text-light1 bill-description">Чек: 1.730 ₽</h4>
+						<h4 class="justify-content-start text-light1 bill-description">Количество позиций: 9</h4>
+						<h4 class="justify-content-start text-light1 bill-description">Сумма доставки: 0 ₽</h4>
+					</div>
+
+				</div>
+				<div class="bill-first2">
+					<div class="item mt-4">
+						<button class="bill-btn2 justify-content-center" type="submit">ИТОГ:3120 ₽</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+ *@
+<script>
+
+	async function GetOrderList(){
+
+		const token =  localStorage.getItem('token');
+		const request = await fetch('/api/order/order-from-db',{
+
+		method:'POST',
+		headers:{
+			 'Authorization':`Bearer ${token}`,
+			 'Content-Type':'application/json'
+		}
+		});
+
+		const responce = await request.json();
+
+		let itemList = [];
+		let orderist = [];
+		let addressList = [];
+
+		  responce.forEach((row, index) => {
+
+			if(row.date != null){
+				orderist.push(row)
+			}else if(row.address_Value != null){
+				addressList.push(row)
+			}else{
+				itemList.push(row)
+			}
+
+
+
+		  });
+
+		  orderist.forEach((row, index) => {
+			   console.log(row);
+
+		  });
+
+
+		  addressList.forEach((row, index) => {
+
+			  console.log(row);
+
+
+		  });
+
+		  itemList.forEach((row, index) => {
+
+			  console.log(row);
+			
+
+		  });
+
+
+		  LoadHtml(orderist,addressList,itemList);
+
+	};
+
+	function LoadHtml(orders,addresses,items){
+
+			const adrDiv = document.createElement('div');
+						adrDiv.classList.add("container");
+						adrDiv.id = 'address';
+
+						const adrRow = document.createElement('div');
+						adrRow.classList.add('row');
+
+						const nineCol = document.createElement('div');
+						nineCol.classList.add("col-md-9");
+
+						const threeCol = document.createElement('div');
+						threeCol.classList.add("col-md-3");
+
+						const editP = document.createElement('p');
+						editP.classList.add("account_p", "edit_account");
+
+					  threeCol.appendChild(editP);
+
+					  let date = document.createElement('h1');
+			date.classList.add("account_h2",  "margin-for-all");
+
+
+
+						let addressP = document.createElement('p');
+						addressP.classList.add("account_p", "margin-for-all");
+						
+
+		
+
+			addresses.forEach((adress, index) => {
+				
+
+			if(index = 0){
+
+				
+			date.textContent = order.date;
+ 
+						addressP.id  = 'addressValue';
+					addressP.textContent =adress.address_Value ;
+
+			}
+			if(orders[index].address_Id =! orders[index+1].address_Id){
+
+					
+						addressP.id  = 'addressValue';
+					addressP.textContent =adress[index+1].address_Value ;
+
+			}
+
+			if(orders[index].date =! orders[index+1].date){
+
+
+			
+			date.textContent = order.date;
+
+				
+						addressP.id  = 'addressValue';
+					addressP.textContent =adress.address_Value ;
+			}
+
+
+
+					nineCol.appendChild(date);
+					  nineCol.appendChild(addressP);
+
+						
+			   });
+			
+			adrRow.appendChild(nineCol);
+						  adrRow.appendChild(threeCol);
+						  adrDiv.appendChild(adrRow);
+
+
+						  const cartElement =  document.getElementById('orderStoryBar');
+
+						  cartElement.after(adrDiv);
+
+						
+
+						
+
+
+
+
+
+					const container = document.createElement('container');
+					const row = document.createElement('row');
+					row.classList.add("row","align-items-start")
+
+
+					const secondCol = document.createElement('div');
+					secondCol.classList.add("col-md-4");
+
+					const mainDivBill = document.createElement('div');
+					mainDivBill.classList.add("card", "bill-cart2", "margin-for-bill");
+
+					const whiteDiv = document.createElement('div');
+					whiteDiv.classList.add("bill-second2");
+
+					const beigeDiv = document.createElement('div');
+					beigeDiv.classList.add("bill-first2");
+
+					const itemDiv = document.createElement('div');
+					itemDiv.classList.add("item");
+
+					const SecondItemDiv = document.createElement('div');
+			itemDiv.classList.add("item","mt-4");
+
+					const check = document.createElement('h4');
+					check.classList.add("justify-content-start", "text-light1", "bill-description");
+				check.textContent= "Чек: 3000 ₽";
+					check.id = "totalCheck";
+
+					const totalCount = document.createElement('h4');
+					totalCount.classList.add("justify-content-start", "text-light1", "bill-description");
+					totalCount.textContent= "Количество позиций:5";
+					totalCount.id = "totalCount";
+
+					const deliveryPrice = document.createElement('h4');
+					deliveryPrice.classList.add("justify-content-start", "text-light1", "bill-description");
+				deliveryPrice.textContent= "Сумма доставки:120 ₽";
+					deliveryPrice.id = "deliveryPrice";
+
+
+				const buyBtn = document.createElement('button');
+				buyBtn.type = "submit";
+			buyBtn.textContent = "ИТОГ:3120 ₽";
+				buyBtn.classList.add("bill-btn2","justify-content-center");
+
+				
+				 
+				 itemDiv.appendChild(buyBtn);
+				   beigeDiv.appendChild(itemDiv);
+
+				SecondItemDiv.appendChild(check);
+					SecondItemDiv.appendChild(totalCount);
+					SecondItemDiv.appendChild(deliveryPrice);
+					whiteDiv.appendChild(SecondItemDiv);
+
+
+
+				   const cardDiv = document.createElement('div');
+				   cardDiv.classList.add("card","bill-cart2","margin-for-bill");
+				   cardDiv.appendChild(whiteDiv);
+				   cardDiv.appendChild(beigeDiv);
+
+				   secondCol.appendChild(cardDiv);
+
+				  const fisrtCol = document.createElement('div');
+					fisrtCol.classList.add("col-md-6");
+
+
+
+
+
+				// 	let image = document.createElement('img');
+				// image.classList.add("cart-images");
+				// image.src = "raf.jpg";
+
+				// let imageDiv = document.createElement('div');
+				// imageDiv.classList.add("d-flex","justify-content-start");
+				// imageDiv.appendChild(image);
+
+				// let title = document.createElement('h4');
+				// title.classList.add("text-light1");
+				// title.textContent = "Тарт с клубникой";
+
+				// let titleDiv =  document.createElement('div');
+				// titleDiv.classList.add("justify-content-start");
+				// titleDiv.appendChild(title);
+
+				// let price = document.createElement('h4');
+				// price.classList.add("justify-content-start");
+				// price.textContent =  "300 рублей";
+
+				// let totalPrice = document.createElement('h5');
+				// totalPrice.classList.add("justify-content-start", "text-light1",  "addition-margin");
+				// totalPrice.textContent ="6 шт";
+
+
+				// let priceAndTitleDiv = document.createElement('div');
+				// priceAndTitleDiv.classList.add("item", "margin-for-text", "margin-for-top");
+				// priceAndTitleDiv.appendChild(title);
+				// priceAndTitleDiv.appendChild(price);
+				// priceAndTitleDiv.appendChild(totalPrice);
+
+
+
+				let rowDiv = document.createElement('div');
+				rowDiv.classList.add("d-flex", "flex-row");
+				// rowDiv.appendChild(imageDiv);
+				// rowDiv.appendChild(priceAndTitleDiv);
+				
+
+				let bodyDiv = document.createElement('div');
+				bodyDiv.classList.add("card-body");
+				bodyDiv.appendChild(rowDiv);
+
+
+
+				let mainDiv = document.createElement('div');
+				mainDiv.classList.add("card", "cart-card", "margin-for-all");
+				mainDiv.appendChild(bodyDiv);
+				
+
+
+				fisrtCol.appendChild(mainDiv);
+
+				
+				 row.appendChild(fisrtCol);
+				row.appendChild(secondCol);
+				container.appendChild(row);
+
+			
+				const appendTo = document.getElementById('address');
+				appendTo.after(container);
+
+					};
+
+
+	 GetOrderList();
+
+
+</script>
